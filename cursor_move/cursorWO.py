@@ -6,7 +6,7 @@ import random
 def move_cursor_periodically(seconds):
     while not stop_flag:
         time.sleep(seconds)
-        print(f"{seconds} saniye sonra fare hareket edecek")
+        print(f"after {seconds} cursor will move ")
         screen_width, screen_height = pyautogui.size()
         x_target = random.randint(0, screen_width)
         y_target = random.randint(0, screen_height)
@@ -25,16 +25,16 @@ def stop_movement():
 root = tk.Tk()
 root.title("Cursor Mover")
 
-label = tk.Label(root, text="Her kaç saniyede bir hareket etsin?")
+label = tk.Label(root, text="How many seconds should it move?")
 label.pack(pady=10)
 
 entry = tk.Entry(root)
 entry.pack(pady=10)
 
-start_button = tk.Button(root, text="Başlat", command=start_movement)
+start_button = tk.Button(root, text="Start", command=start_movement)
 start_button.pack(pady=5)
 
-stop_button = tk.Button(root, text="Durdur", command=stop_movement)
+stop_button = tk.Button(root, text="Stop", command=stop_movement)
 stop_button.pack(pady=5)
 
 stop_flag = False  
